@@ -1,6 +1,7 @@
 package com.frey.msu.photogallery.api
 
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 private const val API_KEY = "0e0784a926f892c475033cc2861705e3"
 
@@ -16,5 +17,5 @@ interface FlickrApi {
     )
 
     // suspend fun fetchContents(): String
-    suspend fun fetchPhotos(): FlickrResponse
+    suspend fun fetchPhotos(@Query("page") page: Int): FlickrResponse
 }
